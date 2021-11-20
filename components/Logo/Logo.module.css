@@ -1,0 +1,9 @@
+.logo {
+  cursor: default;
+  padding: 4px 18px;
+  color: white;
+  background: #0D66FF;
+  border-radius: 90px 90px 4px 90px;
+  font-weight: 600;
+  font-size: 24px;
+}
