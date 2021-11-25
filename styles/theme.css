@@ -6,6 +6,18 @@
   background: #EFF3FB;
 }
 
-.background-main {
+.background-primary {
   background: #0D66FF;
+}
+
+.color-primary {
+  color: #0d66ff;
+}
+
+.background-secondary {
+  background: #d9e7fd;
+}
+
+.cursor-default {
+  cursor: default;
 }

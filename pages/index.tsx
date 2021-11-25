@@ -1,46 +1,58 @@
 import type { NextPage } from 'next'
-import Form from '../components/Form'
-import Logo from '../components/Logo'
+import Header from "../components/Header";
 
 import React from 'react';
+import Banner from '../components/Banner';
+import Companies from '../components/Companies';
+
+const companies = [
+  {
+    id: 1,
+    logoUrl: "https://media-exp1.licdn.com/dms/image/C4D0BAQGjwPKNaVZ7jQ/company-logo_100_100/0/1625578658814?e=1645660800&v=beta&t=utgU3Wp48IE7vm-7Y3-vaUh_5DuPGg3uRlbBAxfhhRs",
+    name: "IBM",
+    segment: "Desenvolvimento de software",
+    stars:3
+  },
+  {
+    id: 1,
+    logoUrl: "https://media-exp1.licdn.com/dms/image/C510BAQGpRhkpxp5A9A/company-logo_100_100/0/1561962168715?e=1645660800&v=beta&t=nDVOKuRTjvTlOo00y9k7yBW40j4JQBhZSQHfLL3Onsw",
+    name: "EW Software",
+    segment: "Desenvolvimento de software",
+    stars:3
+  },
+  {
+    id: 1,
+    logoUrl: "https://media-exp1.licdn.com/dms/image/C4E0BAQGd23iENnlnNw/company-logo_100_100/0/1561728203769?e=1645660800&v=beta&t=5S3fHeg8I3veCjPNpl9R-bfALAlqAZ2z0NS9ctcN6LI",
+    name: "Paraná banco",
+    segment: "Desenvolvimento de software",
+    stars:3
+  },
+  {
+    id: 1,
+    logoUrl: "https://media-exp1.licdn.com/dms/image/C560BAQHTvZwCx4p2Qg/company-logo_100_100/0/1612205615891?e=1645660800&v=beta&t=LpJ7FBkLUaSt1l0FAvyDXmTW6EQPIAYqkiXqWBL96Tw",
+    name: "Amazon",
+    segment: "Desenvolvimento de software",
+    stars:3
+  },
+]
 
 const Home: NextPage = () => {
   return (
-    <main
-      className="flex flex-column items-center justify-center cover min-vh-100"
-      style={{
-        background: "linear-gradient(90deg, rgba(0,0,0,.7) , rgba(0,0,0,0.5) ), url('https://images.unsplash.com/photo-1562564055-71e051d33c19?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=870&q=80')",
-        backgroundPosition: "90% 20%"
-      }}
-    > 
-    <header className="absolute top-0 w-100 flex justify-center items-center pa3">
-    <Logo/>
-  </header>
-      <div className="mt5 mb6 flex flex-row-l flex-column justify-between mw8 pa3 pa0-l">
-        <div className="flex flex-column justify-center mw6 pr4-l pr0 tc tl-l center mb4 mb0-l">
-          <h1 className="white f1-l f3 f2-ns w-100">
-            Chega de não receber feedbacks!
-          </h1>
-          <p className="white f4 w-100">
-            Preencha o formulário, avaliando processos seletivos que participou, e ajude as  empresas a melhorarem!
-          </p>
-        </div>
-        <div className="center" style={{  maxWidth: "450px"}}>
-        <Form
-          title="Avalie o último processo seletivo que participou"
-          button="Enviar avaliação"
-          fields={
-            [
-              {placeholder: "João da Silva", label:"Nome Completo", id:"name", type:"input", required: true},
-              {placeholder: "Desenvolvedor front-end", label:"Cargo", id:"role", type:"input", required: true},
-              {placeholder: "joao.silva@gmail.com", label:"E-mail", id:"email", type:"input", required: true},
-              {placeholder: "Advanced Company", label:"Empresa", id:"company", type:"input", required: true},
-              {placeholder: "Processo seletivo ok, mas não deram feedback final :(", label:"Como foi o processo seletivo?", id:"feedback", type: "textarea", required: true}
-            ]}
-        /> 
-      </div>
-      </div>
+    <>
+    <Header/>
+    <main className="center mw8 w-100 pv5 ph2 ph0-l">
+      <Banner
+        title="Chega de não receber feedbacks!"
+        description="Preencha o formulário, avaliando processos seletivos que participou, e ajude as empresas a melhorarem!"
+      />
+      <h2 className="mt5">As empresas mais bem avaliadas</h2>
+      <Companies companies={companies}/>
+      <h2 className="mt5">Empresas com as menores notas</h2>
+      <Companies companies={companies}/>
+      <h2 className="mt5">Empresas com as menores notas</h2>
+      <Companies companies={companies}/>
     </main>
+    </>
   )
 }
 
